@@ -20,6 +20,7 @@
 build-android-on-win.bat -j4   #编译
 build-android-on-win.bat clean #删除编译
 ```
+注意：在build-android-on-win.bat里根据个人情况修改NDK安装目录：set NDK_DIR="C:\Android\sdk\ndk\21.0.6113669"
 
 2. SeetaFace6JNI的c++原始代码编译报错：seeta::ModelSetting_v2未定义。所以把相关代码注释掉。详见SeetaFace6JNI.patch。虽不完美但也不影响使用。
 3. 编译之后的48个库文件

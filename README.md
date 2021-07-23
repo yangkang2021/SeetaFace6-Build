@@ -81,6 +81,8 @@ android/libs/
 2 directories, 48 files
 ```
 
+## 其他平台其他语言编译
+    - TODO
 
 ## 中科视拓刚刚开源了SeetaFace6JNI，但是没有提供编译脚本，我来说说怎么编译：
 1. 官方android sdk的so列表：分带java的和不带java的：

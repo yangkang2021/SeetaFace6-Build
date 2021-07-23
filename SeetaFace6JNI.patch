@@ -1,0 +1,277 @@
+diff --git a/FaceAntiSpoofingX6/JNIFaceAntiSpoofing.cpp b/FaceAntiSpoofingX6/JNIFaceAntiSpoofing.cpp
+index 506d23d..b1ef35c 100644
+--- a/FaceAntiSpoofingX6/JNIFaceAntiSpoofing.cpp
++++ b/FaceAntiSpoofingX6/JNIFaceAntiSpoofing.cpp
+@@ -67,7 +67,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceAntiSpoofing_construct__Lcom_seeta
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl); 
+   }
+-  
++  /*
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceAntiSpoofing_construct__Ljava_lang_String_2Ljava_lang_String_2I
+   (JNIEnv *env, jobject self, jstring model, jstring device, jint id)
+   {
+@@ -120,7 +120,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceAntiSpoofing_construct__Lcom_seeta
+ 	jlong self_impl = reinterpret_cast<jlong>(native_impl);
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl); 
+-  }
++  }*/
+   
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceAntiSpoofing_dispose
+   (JNIEnv *env, jobject self)
+diff --git a/FaceAntiSpoofingX6/java/com/seeta/sdk/FaceAntiSpoofing.java b/FaceAntiSpoofingX6/java/com/seeta/sdk/FaceAntiSpoofing.java
+index 4b309a3..46ab54f 100644
+--- a/FaceAntiSpoofingX6/java/com/seeta/sdk/FaceAntiSpoofing.java
++++ b/FaceAntiSpoofingX6/java/com/seeta/sdk/FaceAntiSpoofing.java
+@@ -15,15 +15,15 @@ public class FaceAntiSpoofing
+ 	public long impl = 0;
+ 
+ 	private native void construct(SeetaModelSetting setting);
+-	private native void construct(String model, String device, int id);
+-	private native void construct(String model1, String  model2, String device, int id);
++	//private native void construct(String model, String device, int id);
++	//private native void construct(String model1, String  model2, String device, int id);
+ 	public native void dispose();
+ 
+ 	public FaceAntiSpoofing(SeetaModelSetting setting) {this.construct(setting);}
+ 
+-	public FaceAntiSpoofing(String model, String device, int id) {this.construct(model, device, id);}
++	//public FaceAntiSpoofing(String model, String device, int id) {this.construct(model, device, id);}
+ 
+-	public FaceAntiSpoofing(String model1, String model2, String device, int id) {this.construct(model1, model2, device, id);}
++	//public FaceAntiSpoofing(String model1, String model2, String device, int id) {this.construct(model1, model2, device, id);}
+ 	protected void finalize() throws Throwable{
+ 		super.finalize();
+ 		this.dispose();
+diff --git a/FaceBoxes/JNIFaceDetector.cpp b/FaceBoxes/JNIFaceDetector.cpp
+index f9f9d16..3f5218f 100644
+--- a/FaceBoxes/JNIFaceDetector.cpp
++++ b/FaceBoxes/JNIFaceDetector.cpp
+@@ -1,6 +1,6 @@
+ #include "JNIFaceDetector.h"
+ #include "jni_struct.hpp"
+-#include "src/seeta/FaceDetector.h"
++#include "seeta/FaceDetector.h"
+ #include "Common/Struct.h"
+ #include <vector>
+ #include <iostream>
+@@ -84,7 +84,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceDetector_construct__Lcom_seeta_sdk
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl); 
+   }
+-  
++/* 
+ JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceDetector_construct__Ljava_lang_String_2Ljava_lang_String_2I
+   (JNIEnv *env, jobject self, jstring model, jstring device, jint id)
+   {
+@@ -110,7 +110,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceDetector_construct__Ljava_lang_Str
+ 	jlong self_impl = reinterpret_cast<jlong>(native_impl);
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl); 
+-  }
++  }*/
+   
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceDetector_dispose
+   (JNIEnv *env, jobject self)
+diff --git a/FaceRecognizer6/JNIFaceRecognizer.cpp b/FaceRecognizer6/JNIFaceRecognizer.cpp
+index df9ad7c..03fb826 100644
+--- a/FaceRecognizer6/JNIFaceRecognizer.cpp
++++ b/FaceRecognizer6/JNIFaceRecognizer.cpp
+@@ -80,7 +80,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceRecognizer_construct__Lcom_seeta_s
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl); 
+   }
+-  
++  /*
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceRecognizer_construct__Ljava_lang_String_2Ljava_lang_String_2I
+   (JNIEnv *env, jobject self, jstring model, jstring device, jint id)
+   {
+@@ -109,7 +109,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceRecognizer_construct__Lcom_seeta_s
+ 	jlong self_impl = reinterpret_cast<jlong>(native_impl);
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl); 
+-  }
++  }*/
+   
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceRecognizer_dispose
+   (JNIEnv *env, jobject self)
+diff --git a/FaceRecognizer6/java/com/seeta/sdk/FaceRecognizer.java b/FaceRecognizer6/java/com/seeta/sdk/FaceRecognizer.java
+index 65742b9..0554d4f 100644
+--- a/FaceRecognizer6/java/com/seeta/sdk/FaceRecognizer.java
++++ b/FaceRecognizer6/java/com/seeta/sdk/FaceRecognizer.java
+@@ -28,15 +28,15 @@ public class FaceRecognizer {
+     public long impl = 0;
+ 
+     private native void construct(SeetaModelSetting setting);
+-    private native void construct(String model, String device, int id);
++    //private native void construct(String model, String device, int id);
+ 
+     public FaceRecognizer(SeetaModelSetting setting) {
+         this.construct(setting);
+     }
+ 
+-    public FaceRecognizer(String model, String device, int id) {
+-        this.construct(model, device, id);
+-    }
++    //public FaceRecognizer(String model, String device, int id) {
++    //    this.construct(model, device, id);
++    //}
+ 
+     public native void dispose();
+     protected void finalize()throws Throwable{
+diff --git a/FaceTracker6/JNIFaceTracker.cpp b/FaceTracker6/JNIFaceTracker.cpp
+index 8b55798..3fb089c 100644
+--- a/FaceTracker6/JNIFaceTracker.cpp
++++ b/FaceTracker6/JNIFaceTracker.cpp
+@@ -31,7 +31,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceTracker_construct__Ljava_lang_Stri
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl); 
+   }
+-  
++  /*
+  JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceTracker_construct__Ljava_lang_String_2Ljava_lang_String_2III
+   (JNIEnv *env, jobject self, jstring model, jstring device, jint id, jint video_width, jint video_height)
+   {
+@@ -57,7 +57,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceTracker_construct__Ljava_lang_Stri
+ 	jlong self_impl = reinterpret_cast<jlong>(native_impl);
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl);  
+-  }
++  }*/
+   
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceTracker_dispose
+   (JNIEnv *env, jobject self)
+diff --git a/Landmarker/JNIFaceLandmarker.cpp b/Landmarker/JNIFaceLandmarker.cpp
+index 956365e..607ece0 100644
+--- a/Landmarker/JNIFaceLandmarker.cpp
++++ b/Landmarker/JNIFaceLandmarker.cpp
+@@ -65,7 +65,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceLandmarker_construct__Lcom_seeta_s
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl);  
+   }
+-  
++  /*
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceLandmarker_construct__Ljava_lang_String_2Ljava_lang_String_2I
+   (JNIEnv *env, jobject self, jstring model, jstring device, jint id)
+   {
+@@ -94,7 +94,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceLandmarker_construct__Lcom_seeta_s
+ 	jlong self_impl = reinterpret_cast<jlong>(native_impl);
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl); 
+-  }
++  }*/
+   
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_FaceLandmarker_dispose
+   (JNIEnv *env, jobject self)
+diff --git a/Landmarker/java/com/seeta/sdk/FaceLandmarker.java b/Landmarker/java/com/seeta/sdk/FaceLandmarker.java
+index ccea565..7361753 100644
+--- a/Landmarker/java/com/seeta/sdk/FaceLandmarker.java
++++ b/Landmarker/java/com/seeta/sdk/FaceLandmarker.java
+@@ -7,16 +7,16 @@ public class FaceLandmarker {
+ 
+     public long impl = 0;
+     private native void construct(SeetaModelSetting seeting);
+-    private native void construct(String model, String device, int id);
++    //private native void construct(String model, String device, int id);
+ 
+     public FaceLandmarker(SeetaModelSetting setting){
+         this.construct(setting);
+     }
+ 
+-    public FaceLandmarker(String model, String device, int id)
+-    {
+-        this.construct(model, device, id);
+-    }
++    //public FaceLandmarker(String model, String device, int id)
++    //{
++    //    this.construct(model, device, id);
++    //}
+ 
+     public native void dispose();
+     protected void finalize()throws Throwable{
+diff --git a/PoseEstimator6/JNIPoseEstimator.cpp b/PoseEstimator6/JNIPoseEstimator.cpp
+index 329e79f..f2dea48 100644
+--- a/PoseEstimator6/JNIPoseEstimator.cpp
++++ b/PoseEstimator6/JNIPoseEstimator.cpp
+@@ -31,7 +31,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_PoseEstimator_construct__Ljava_lang_St
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl);
+   }
+-  
++  /*
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_PoseEstimator_construct__Ljava_lang_String_2Ljava_lang_String_2I
+   (JNIEnv *env, jobject self, jstring model, jstring device, jint id)
+   {
+@@ -57,7 +57,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_PoseEstimator_construct__Ljava_lang_St
+ 	jlong self_impl = reinterpret_cast<jlong>(native_impl);
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl);
+-  }
++  }*/
+   
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_PoseEstimator_dispose
+   (JNIEnv *env, jobject self)
+diff --git a/PoseEstimator6/java/com/seeta/sdk/PoseEstimator.java b/PoseEstimator6/java/com/seeta/sdk/PoseEstimator.java
+index 2f86b74..c2ad376 100644
+--- a/PoseEstimator6/java/com/seeta/sdk/PoseEstimator.java
++++ b/PoseEstimator6/java/com/seeta/sdk/PoseEstimator.java
+@@ -7,12 +7,12 @@ public class PoseEstimator {
+ 
+     public long impl = 0;
+     private native void construct(String seetaModel);
+-    private native void construct(String model, String device, int id);
++    //private native void construct(String model, String device, int id);
+ 
+     public PoseEstimator(String seetaModel){
+         this.construct(seetaModel);
+     }
+-    public PoseEstimator(String model, String device ,int id){this.construct(model, device, id);}
++    //public PoseEstimator(String model, String device ,int id){this.construct(model, device, id);}
+ 
+     public native void dispose();
+     protected void finalize()throws Throwable{
+diff --git a/QualityAssessor3/JNIQualityOfLBN.cpp b/QualityAssessor3/JNIQualityOfLBN.cpp
+index 9f03823..f330ddb 100644
+--- a/QualityAssessor3/JNIQualityOfLBN.cpp
++++ b/QualityAssessor3/JNIQualityOfLBN.cpp
+@@ -69,7 +69,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_QualityOfLBN_construct__Lcom_seeta_sdk
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl);   
+   }
+-  
++  /*
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_QualityOfLBN_construct__Ljava_lang_String_2Ljava_lang_String_2I
+   (JNIEnv *env, jobject self, jstring model, jstring device, jint id)
+   {
+@@ -95,7 +95,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_QualityOfLBN_construct__Lcom_seeta_sdk
+ 	jlong self_impl = reinterpret_cast<jlong>(native_impl);
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl);   
+-  }
++  }*/
+   
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_QualityOfLBN_dispose
+   (JNIEnv *env, jobject self)
+diff --git a/QualityAssessor3/JNIQualityOfPoseEx.cpp b/QualityAssessor3/JNIQualityOfPoseEx.cpp
+index c2030bf..4f629f1 100644
+--- a/QualityAssessor3/JNIQualityOfPoseEx.cpp
++++ b/QualityAssessor3/JNIQualityOfPoseEx.cpp
+@@ -69,7 +69,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_QualityOfPoseEx_construct__Lcom_seeta_
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl);  
+   }
+-  
++  /*
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_QualityOfPoseEx_construct__Ljava_lang_String_2Ljava_lang_String_2I
+   (JNIEnv *env, jobject self, jstring model, jstring device, jint id)
+   {
+@@ -95,7 +95,7 @@ JNIEXPORT void JNICALL Java_com_seeta_sdk_QualityOfPoseEx_construct__Lcom_seeta_
+ 	jlong self_impl = reinterpret_cast<jlong>(native_impl);
+ 
+ 	env->SetLongField(self, self_filed_impl, self_impl);   
+-  }
++  }*/
+   
+   JNIEXPORT void JNICALL Java_com_seeta_sdk_QualityOfPoseEx_dispose
+   (JNIEnv *env, jobject self)

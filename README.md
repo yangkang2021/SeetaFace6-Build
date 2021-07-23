@@ -3,7 +3,8 @@
 
 
 ## 下载源码
-git clone 和 更新所有子模块
+- 下载所有SeetaFace6的代码：  git clone 和 更新所有子模块
+- 已经有SeetaFace6Open的代码：只需克隆本项目把文件放到SeetaFace6Open的根目录，还需把SeetaFace6JNI也克隆SeetaFace6Open的根目录。
 
 
 ## 官方原有文档

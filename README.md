@@ -1,5 +1,5 @@
 # SeetaFace6-Build
-在最小限度动过情况下，提供SeetaFace6的编译帮助
+在最小限度改动情况下，提供SeetaFace6的编译帮助
 
 
 ## 下载源码

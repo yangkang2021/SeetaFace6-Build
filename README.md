@@ -15,6 +15,11 @@ git clone 和 更新所有子模块
 
 ## Android编译
 1. 在windows直接运行build-android-on-win.bat，你可以带上参数如：-j4, clean
+```
+build-android-on-win.bat -j4   #编译
+build-android-on-win.bat clean #删除编译
+```
+
 2. SeetaFace6JNI的c++原始代码编译报错：seeta::ModelSetting_v2未定义。所以把相关代码注释掉。详见SeetaFace6JNI.patch。虽不完美但也不影响使用。
 3. 编译之后的48个库文件
 

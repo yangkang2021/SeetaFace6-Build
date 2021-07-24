@@ -5,7 +5,39 @@
 
 ## 下载源码
 - 下载所有SeetaFace6的代码：  git clone 和 更新所有子模块
-- 已经有SeetaFace6Open的代码：只需克隆本项目把文件放到SeetaFace6Open的根目录，还需把SeetaFace6JNI也克隆SeetaFace6Open的根目录。
+- 已经有SeetaFace6Open的代码：只需克隆本项目把文件放到SeetaFace6Open的根目录，还需把SeetaFace6JNI也克隆SeetaFace6Open的根目录，无需clone子模块。
+- 完整的根目录结构：
+```
+$ tree -a  -L 1 seetaface6open
+seetaface6open
+├── .git
+├── .gitmodules
+├── android
+├── asserts
+├── build-android-on-win.bat
+├── docs
+├── example
+├── FaceAntiSpoofingX6
+├── FaceBoxes
+├── FaceRecognizer6
+├── FaceTracker6
+├── Landmarker
+├── OpenRoleZoo
+├── PoseEstimator6
+├── QualityAssessor3
+├── README.md
+├── SeetaAgePredictor
+├── SeetaAuthorize
+├── SeetaEyeStateDetector
+├── SeetaFace6-Build
+├── SeetaFace6JNI
+├── SeetaFace6JNI.patch
+├── SeetaGenderPredictor
+├── SeetaMaskDetector
+└── TenniS
+
+21 directories, 4 files
+```
 
 ## 官方原有文档
 [官方c++库](https://github.com/SeetaFace6Open/index)
